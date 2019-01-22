@@ -157,22 +157,6 @@ class TeacherController extends Controller
                 'email' => $request->emails[$indice]
             ]);
         }
-        /*if ($correo->count() == 2) {
-            for ($i=1; $i < 3; $i++) {
-                $correo->update([
-                    'email' => ($i == 1)?$request->email1:$request->email2,
-                ]);
-            }
-        }elseif($correo->first()->email != $request->email1){
-            $correo->update([
-                'email' => $request->email1,
-            ]);
-            if ($correo->first()->email!= $request->email2) {
-                $correo->update([
-                    'email' => $request->email2,
-                ]);
-            }
-        }*/
 
         return back()->with('info','Se ha modificado de manera exitosa!');
     }
