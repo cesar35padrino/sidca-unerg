@@ -163,9 +163,15 @@ class TeacherController extends Controller
 
     public function design_prof($ci){
         
-        $p = file_get_contents('http://localhost:8001/persona/ci/'.$ci, true);
-        $array = json_decode($p);
-
+        // $p = file_get_contents('http://localhost:8001/persona/ci/'.$ci, true);
+        
+        if ($p) {
+            // $array = json_decode($p);
+            return $p;
+        }else{
+            return "No existe";
+        }
+        /*
         $ficha_id = $array[0]->fic_id;
         $cedula = $array[0]->fic_cedula;
         $codigo_prof = $array[0]->prf_codigo;
@@ -183,11 +189,7 @@ class TeacherController extends Controller
 
         return "<h1>".$primer_nombre." ".$primer_apellido."</h1>";
 
-        if ($p) {
-            return "Si existe";
-        }else{
-            return "No existe";
-        }
+        */
     }
 
     public function destroy($id)
