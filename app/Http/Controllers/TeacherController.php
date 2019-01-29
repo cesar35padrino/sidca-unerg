@@ -161,6 +161,35 @@ class TeacherController extends Controller
         return back()->with('info','Se ha modificado de manera exitosa!');
     }
 
+    public function design_prof($ci){
+        
+        $p = file_get_contents('http://localhost:8001/persona/ci/'.$ci, true);
+        $array = json_decode($p);
+
+        $ficha_id = $array[0]->fic_id;
+        $cedula = $array[0]->fic_cedula;
+        $codigo_prof = $array[0]->prf_codigo;
+        $correo = $array[0]->fic_email;
+        $telefono = $array[0]->fic_tel;
+        $primer_nombre = $array[0]->fic_nom1;
+        $segundo_nombre = $array[0]->fic_nom2;
+        $primer_apellido = $array[0]->fic_ape1;
+        $segundo_apellido = $array[0]->fic_ape2;
+
+        $direccion = $array[0]->fic_dir;
+        $pais = $array[0]->fic_dirpais;
+        $estado = $array[0]->fic_direstado;
+        $fecha_nac = $array[0]->fic_fnac;
+
+        return "<h1>".$primer_nombre." ".$primer_apellido."</h1>";
+
+        if ($p) {
+            return "Si existe";
+        }else{
+            return "No existe";
+        }
+    }
+
     public function destroy($id)
     {
         //
