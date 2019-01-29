@@ -53,7 +53,7 @@ class TeacherController extends Controller
             ->with('estados',$estados);
     }
 
-    public function store(TeacherRequest $request)
+    public function store(Request $request)
     {
         $profesor = Teacher::create([
             'first_name'    =>  $request->first_name,
@@ -109,6 +109,7 @@ class TeacherController extends Controller
         $count_emails = $teacher->emails->count();
         // contadores
         $i = 1;
+        $j = 1;
         // dd($count_emails);
 
         return view('teacher.edit')
@@ -119,14 +120,15 @@ class TeacherController extends Controller
             ->with('paises',$paises)
             ->with('estados',$estados)
             ->with('i',$i)
-            ->with('teacher', $teacher);
+            ->with('teacher', $teacher)
+            ->with('j', $j);
     }
 
-    public function update(UpdateRequest $request,$id)
+    public function update(Request $request,$id)
     {
         $teacher = Teacher::find($id);
-        $telefonos = Phone::where('teacher_id',$id);
-        $correos = Email::where('teacher_id',$id);
+        $telefonos = Phone::where('teacher_id',$id)->get();
+        $correos = Email::where('teacher_id',$id)->get();
 
         $teacher->update([
             'first_name'    =>  ($request->first_name)?$request->first_name:$teacher->first_name,
@@ -140,51 +142,54 @@ class TeacherController extends Controller
             'status'        =>  ($request->status)?$request->status:$teacher->status,
             'observation'   =>  ($request->observation)?$request->observation:$teacher->observation,
             'state_id'      =>  ($request->state_id)?$request->state_id:$teacher->state_id,
-            // 'municipality_id'      =>  ($request->municipality_id)?$request->municipality_id:$teacher->municipality_id,
-            // 'parish_id'     =>  ($request->parish_id)?$request->parish_id:$teacher->parish_id,
         ]);
-
-        foreach ($telefonos as $indice => $telefono) {
-            dd($telefono);
-        }
-
+        
         // UPDATE PHONE
-        if ($telefono->count() == 2) {
-            for ($i=1; $i < 3; $i++) {
-                $telefono->update([
-                    'number' => ($i == 1)?$request->phone1:$request->phone2,
-                ]);
-            }
-        }elseif($telefono->first()->number != $request->phone1){
+        foreach ($telefonos as $indice => $telefono) {
             $telefono->update([
-                'number' => $request->phone1,
+                'number' => $request->phones[$indice]
             ]);
-            if ($telefono->first()->number != $request->phone2) {
-                $telefono->update([
-                    'number' => $request->phone2,
-                ]);
-            }
         }
 
         // UPDATE EMAIL
-        if ($correo->count() == 2) {
-            for ($i=1; $i < 3; $i++) {
-                $correo->update([
-                    'email' => ($i == 1)?$request->email1:$request->email2,
-                ]);
-            }
-        }elseif($correo->first()->email != $request->email1){
+        foreach ($correos as $indice => $correo) {
             $correo->update([
-                'email' => $request->email1,
+                'email' => $request->emails[$indice]
             ]);
-            if ($correo->first()->email!= $request->email2) {
-                $correo->update([
-                    'email' => $request->email2,
-                ]);
-            }
         }
 
         return back()->with('info','Se ha modificado de manera exitosa!');
+    }
+
+    public function design_prof($ci){
+        
+        // $p = file_get_contents('http://localhost:8001/persona/ci/'.$ci, true);
+        
+        if ($p) {
+            // $array = json_decode($p);
+            return $p;
+        }else{
+            return "No existe";
+        }
+        /*
+        $ficha_id = $array[0]->fic_id;
+        $cedula = $array[0]->fic_cedula;
+        $codigo_prof = $array[0]->prf_codigo;
+        $correo = $array[0]->fic_email;
+        $telefono = $array[0]->fic_tel;
+        $primer_nombre = $array[0]->fic_nom1;
+        $segundo_nombre = $array[0]->fic_nom2;
+        $primer_apellido = $array[0]->fic_ape1;
+        $segundo_apellido = $array[0]->fic_ape2;
+
+        $direccion = $array[0]->fic_dir;
+        $pais = $array[0]->fic_dirpais;
+        $estado = $array[0]->fic_direstado;
+        $fecha_nac = $array[0]->fic_fnac;
+
+        return "<h1>".$primer_nombre." ".$primer_apellido."</h1>";
+
+        */
     }
 
     public function destroy($id)

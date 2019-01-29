@@ -106,5 +106,7 @@
 	<script src="{{asset('js/myjs.js')}}"></script>
 	<script src="{{asset('js/uikit.min.js')}}"></script>
 	<script src="{{asset('js/uikit-icons.min.js')}}"></script>
+
+	@yield('js')
 </body>
 </html>

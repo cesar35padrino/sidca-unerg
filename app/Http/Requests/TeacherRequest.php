@@ -23,13 +23,13 @@ class TeacherRequest extends FormRequest
      */
     public function rules()
     {
+        //'email1'            => ['required','min:6','max:50'],
         return [
             'identity'          => ['required','min:6','max:9','unique:teachers'],
             'first_name'        => ['required','min:2','max:30'],
             'last_name'         => ['required','min:2','max:30'],
             'phone1'            => ['required','min:8','max:11'],
             'phone2'            => ['max:11'],
-            'email1'            => ['required','min:6','max:50'],
             'email2'            => ['max:50'],
             'address'           => ['required','min:10','max:190'],
             'countrie_id'       => ['required'],
