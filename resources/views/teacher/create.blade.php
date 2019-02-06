@@ -32,36 +32,36 @@
 		</div>
 		<div class="uk-width-1-4@s">
 			<label class="uk-form-label">Nombres</label>
-			<input value="{{ old('first_name') }}" name="first_name" class="uk-input" type="text" placeholder="Nombres">
+			<input value="{{ old('first_name') }}" name="first_name" id="first_name" class="uk-input" type="text" placeholder="Nombres">
 		</div>
 		<div class="uk-width-1-4@s">
 			<label class="uk-form-label">Apellidos</label>
-			<input value="{{ old('last_name') }}" name="last_name" class="uk-input" type="text" placeholder="Apellidos">
+			<input value="{{ old('last_name') }}" name="last_name" id="last_name" class="uk-input" type="text" placeholder="Apellidos">
 		</div>
 
 		<div class="uk-width-1-4@s">
 			<label class="uk-form-label">Telefono 1</label>
-			<input value="{{ old('phone1') }}" name="phone1" class="uk-input"  id="input" type="number" placeholder="Telefono Movil">
+			<input value="{{ old('phone1') }}" name="phone1" class="uk-input"  id="phone1" type="number" placeholder="Telefono Movil">
 		</div>
 		<div class="uk-width-1-4@s">
 			<label class="uk-form-label">Telefono 2</label>
-			<input value="{{ old('phone2') }}" class="uk-input" name="phone2"  id="input" stype="number" placeholder="Telefono Casa">
+			<input value="{{ old('phone2') }}" class="uk-input" name="phone2"  id="phone2" stype="number" placeholder="Telefono Casa">
 		</div>
 		<div class="uk-width-1-4@s">
 			<label class="uk-form-label">Fecha de Nacimiento</label>
-			<input value="{{ old('birthdate') }}" class="uk-input" id="input" name="birthdate" type="date" placeholder="Fecha de Nac">
+			<input value="{{ old('birthdate') }}" class="uk-input" id="birthdate" name="birthdate" type="date" placeholder="Fecha de Nac">
 		</div>
 		<div class="uk-width-1-2@s">
 			<label class="uk-form-label">Direccion</label>
-			<input value="{{ old('address') }}" class="uk-input" type="text" name="address" placeholder="Direccion">
+			<input value="{{ old('address') }}" class="uk-input" type="text" id="address" name="address" placeholder="Direccion">
 		</div>						
 		<div class="uk-width-1-2@s">
 			<label class="uk-form-label">Correo Personal</label>
-			<input value="{{ old('email1') }}" class="uk-input" type="email" placeholder="Correo Personal" name="email1">
+			<input value="{{ old('email1') }}" class="uk-input" type="email" placeholder="Correo Personal" id="email1" name="email1">
 		</div>
 		<div class="uk-width-1-2@s">
 			<label class="uk-form-label">Correo Institucional</label>
-			<input value="{{ old('email2') }}" class="uk-input" name="email2" type="email" placeholder="Correo Institucional @unerg.edu.ve">
+			<input value="{{ old('email2') }}" class="uk-input" id="email2" name="email2" type="email" placeholder="Correo Institucional @unerg.edu.ve">
 		</div>
 
 		<div class="uk-width-1-4@s">

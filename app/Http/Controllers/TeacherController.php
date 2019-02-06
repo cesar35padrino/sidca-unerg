@@ -163,7 +163,7 @@ class TeacherController extends Controller
 
     public function design_prof($ci){
         
-        // $p = file_get_contents('http://localhost:8001/persona/ci/'.$ci, true);
+        $p = file_get_contents('http://localhost:8001/persona/ci/'.$ci, true);
         
         if ($p) {
             // $array = json_decode($p);
