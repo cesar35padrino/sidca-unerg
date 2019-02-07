@@ -6,21 +6,41 @@ $("table tbody tr td a:first-child").click(function()
 	console.log(total[0]);
 })
 
+$(document).ready(function(){
+	$("#ci_import").keyup(function(){
+		var parametros=$(this).val();
+		console.log(parametros);
+		$.ajax({
+	      url: 'http://localhost:8000/design/'+parametros,
+	      type: 'GET',
+	      dataType: 'json',
+	      // data: parametros
+	  	}).done(function(respuesta){
+		    console.log(respuesta[0]);
+		    $('#first_name').val(respuesta[0].fic_pnombre);
+		    $('#last_name').val(respuesta[0].fic_snombre);
+		    $('#phone1').val(respuesta[0].fic_cel);
+		    $('#birthdate').val(respuesta[0].fic_fnac);
+		    $('#address').val(respuesta[0].fic_dir);
+		    $('#email1').val(respuesta[0].fic_email);
+	    });
+	})
+})
 
-$(document).ready(function() {
+// $(document).ready(function() {
 
-  $.ajax({
-      url: 'http://localhost:8000/design/15082269',
-      type: 'GET',
-      dataType: 'json',
-      data:{id:$('#cambiar').val()}
-  }).done(function(respuesta){
-    console.log(respuesta[0]);
-    $('#first_name').val(respuesta[0].fic_pnombre);
-    $('#last_name').val(respuesta[0].fic_snombre);
-    $('#phone1').val(respuesta[0].fic_cel);
-    $('#birthdate').val(respuesta[0].fic_fnac);
-    $('#address').val(respuesta[0].fic_dir);
-    $('#email1').val(respuesta[0].fic_email);
-    });
-});
+//   $.ajax({
+// 	      url: 'http://localhost:8000/design/15082269',
+// 	      type: 'GET',
+// 	      dataType: 'json',
+// 	      data:{id:$('#cambiar').val()}
+//   	}).done(function(respuesta){
+// 	    console.log(respuesta[0]);
+// 	    $('#first_name').val(respuesta[0].fic_pnombre);
+// 	    $('#last_name').val(respuesta[0].fic_snombre);
+// 	    $('#phone1').val(respuesta[0].fic_cel);
+// 	    $('#birthdate').val(respuesta[0].fic_fnac);
+// 	    $('#address').val(respuesta[0].fic_dir);
+// 	    $('#email1').val(respuesta[0].fic_email);
+//     });
+// });

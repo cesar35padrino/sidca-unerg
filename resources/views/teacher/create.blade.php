@@ -28,7 +28,7 @@
 		<legend class="uk-legend uk-text-center">SIDCA - Registro</legend>
 		<div class="uk-width-1-4@s">
 			<label class="uk-form-label">Cedula</label>
-			<input value="{{ old('identity') }}" name="identity" class="uk-input"  id="input" type="number" placeholder="Cedula">
+			<input value="{{ old('identity') }}" name="identity" class="uk-input ci_import"  id="ci_import" type="number" placeholder="Cedula">
 		</div>
 		<div class="uk-width-1-4@s">
 			<label class="uk-form-label">Nombres</label>
@@ -87,20 +87,6 @@
 				@endforelse
 			</select>
 		</div>
-		<!-- <div class="uk-width-1-4@s">
-			<select class="uk-select" name="municipality_id" id="form-stacked-select" placehoder="Sidca">
-
-				<option value="{{ old('municipality_id') }}">Municipio</option>
-				<option value="1">simon bolivar</option>
-			</select>
-		</div>
-		<div class="uk-width-1-4@s">
-			<select class="uk-select" name="parish_id" id="form-stacked-select">
-
-				<option value="{{ old('parish_id') }}">Parroquia</option>
-				<option value="1">Camburito</option>
-			</select>
-		</div> -->
 		<div class="uk-width-1-2@s">
 			<label class="uk-form-label">Sede</label>
 			<select class="uk-select" name="headquarters_id" id="form-stacked-select">
@@ -123,7 +109,6 @@
 				@endforelse
 			</select>
 		</div>
-
 		<div class="uk-width-1-2@s">
 			<label class="uk-form-label">Estatus</label>
 			<select class="uk-select" name="status" id="form-stacked-select">
