@@ -187,7 +187,6 @@ class TeacherController extends Controller
         return view('teacher/title')
         ->with('teacher', $teacher)
         ->with('titles', $titles);
-
     }
 
     public function destroy($id)

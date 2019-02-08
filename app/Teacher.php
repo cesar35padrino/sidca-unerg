@@ -60,6 +60,11 @@ class Teacher extends Model
         return $this->hasMany(Phone::class);
     }
 
+    public function titles()
+    {
+        return $this->hasMany(Title::class);
+    }
+
     public function studies()
     {
         return $this->hasMany(Study::class);

@@ -1,5 +1,8 @@
 @extends('layouts.template')
 @section('content')
+@section('css') 
+    <link href="{{ asset('chosen/chosen.css') }}" rel="stylesheet">
+@stop
 <!-- FORM -->
 <!-- ALERTAS -->
 <div class="uk-container uk-position-top uk-align-center">
@@ -28,14 +31,20 @@
 		<div class="uk-width-1-1@s">
 			<h4 align="center">{{ $teacher->first_name }}&nbsp{{ $teacher->last_name }}</h4>
 		</div>
-		<div class="uk-width-1-4@s">
-			<label class="uk-form-label">Titulo</label>
+		<div class="uk-width-1-2@s">
+			<label class="uk-form-label">Fecha de emision</label>
 			<input value="{{ old('title') }}" name="title" class="uk-input ci_import"  id="ci_import" type="number" placeholder="Titulo">
 		</div>
-		<div>
-			<select name="select">
-				<option value=""></option>
-				option
+		<div class="uk-width-1-2@s">
+			<label class="uk-form-label">Fecha de consignacion</label>
+			<input value="{{ old('title') }}" name="title" class="uk-input ci_import"  id="ci_import" type="number" placeholder="Titulo">
+		</div>
+		<div class="uk-width-1-1@s">
+			<select id="select" class="select" name="title">
+				<option value="">Ninguno</option>
+			@foreach($titles as $title)
+				<option value="{{ $title->id }}">{{ $title->name }}</option>
+			@endforeach
 			</select>
 		</div>
 		
@@ -48,13 +57,12 @@
 @endsection
 
 @section('js')
-	<script src="{{ asset('Pretty-jQuery-Searchable/dist/selectr.js') }}"></script>
+	<script src="{{ asset('chosen/chosen.jquery.js') }}"></script>
 	<script>
-		$(document).ready(function () {
-            $("select").selectr({
-                title: 'What would you like to drink?',
-                placeholder: 'Search beverages'
-            });
-        });
+	$(".select").chosen({
+	    no_results_text: "Oops, no se encontraron resultados! para ",
+	    width: "45%",
+	    rtl: true
+	});
 	</script>
 @stop

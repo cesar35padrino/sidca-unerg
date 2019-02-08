@@ -8,7 +8,7 @@
 	<!-- CSS FILES -->
 	<link rel="stylesheet" href="{{asset('css/uikit.min.css')}}" />
 	<link rel="stylesheet" href="{{asset('css/style.css')}}">
-	<link rel="stylesheet" href="{{ asset('Pretty-jQuery-Searchable/dist/selectr.css') }}">
+	@yield('css')
 
 </head>
 <body class="uk-light wrap uk-background-norepeat uk-background-cover uk-background-center-center uk-background-secondary" style="background-image: url({{asset('img/P6265793.JPG')}})">

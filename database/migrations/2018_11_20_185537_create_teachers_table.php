@@ -25,6 +25,7 @@ class CreateTeachersTable extends Migration
             
             $table->unsignedInteger('crh_id')->nullable();
             $table->integer('roster_id')->unsigned()->nullable();
+            $table->integer('title_id')->unsigned()->nullable();
             $table->unsignedInteger('state_id')->nullable();
             $table->unsignedInteger('classification_id');
             $table->unsignedInteger('headquarter_id');
@@ -37,6 +38,7 @@ class CreateTeachersTable extends Migration
             $table->foreign('classification_id')->references('id')->on('classifications')->onDelete('cascade');
             $table->foreign('headquarter_id')->references('id')->on('headquarters')->onDelete('cascade');
             $table->foreign('roster_id')->references('id')->on('rosters')->onDelete('cascade');
+            $table->foreign('title_id')->references('id')->on('titles')->onDelete('cascade');
 
         });
     }
