@@ -1,0 +1,10 @@
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.sass-cache
+node_modules/
+bower_components/
+build/
+*.sublime-workspace

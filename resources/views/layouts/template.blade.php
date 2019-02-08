@@ -8,6 +8,8 @@
 	<!-- CSS FILES -->
 	<link rel="stylesheet" href="{{asset('css/uikit.min.css')}}" />
 	<link rel="stylesheet" href="{{asset('css/style.css')}}">
+	<link rel="stylesheet" href="{{ asset('Pretty-jQuery-Searchable/dist/selectr.css') }}">
+
 </head>
 <body class="uk-light wrap uk-background-norepeat uk-background-cover uk-background-center-center uk-background-secondary" style="background-image: url({{asset('img/P6265793.JPG')}})">
 	<div class="uk-offcanvas-content">
@@ -106,7 +108,6 @@
 	<script src="{{asset('js/myjs.js')}}"></script>
 	<script src="{{asset('js/uikit.min.js')}}"></script>
 	<script src="{{asset('js/uikit-icons.min.js')}}"></script>
-
 	@yield('js')
 </body>
 </html>

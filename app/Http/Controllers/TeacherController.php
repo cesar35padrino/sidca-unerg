@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\TeacherRequest;
 use App\Http\Requests\UpdateRequest;
 use App\Teacher;
+use App\Title;
 use App\Email;
 use App\State;
 use App\Country;
@@ -182,8 +183,10 @@ class TeacherController extends Controller
 
     public function title_prof($id){
         $teacher = Teacher::find($id);
-        // $teacher = ['haha'=>'hoho'];
-        return view('teacher/title')->with('teacher', $teacher);
+        $titles = Title::all();
+        return view('teacher/title')
+        ->with('teacher', $teacher)
+        ->with('titles', $titles);
 
     }
 

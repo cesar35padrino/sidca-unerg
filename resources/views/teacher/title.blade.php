@@ -32,6 +32,12 @@
 			<label class="uk-form-label">Titulo</label>
 			<input value="{{ old('title') }}" name="title" class="uk-input ci_import"  id="ci_import" type="number" placeholder="Titulo">
 		</div>
+		<div>
+			<select name="select">
+				<option value=""></option>
+				option
+			</select>
+		</div>
 		
 		<div class="uk-width-1-1@s">
 			<button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" name="boton">Guardar</button>
@@ -42,6 +48,13 @@
 @endsection
 
 @section('js')
-	<script type="text/javascript">
+	<script src="{{ asset('Pretty-jQuery-Searchable/dist/selectr.js') }}"></script>
+	<script>
+		$(document).ready(function () {
+            $("select").selectr({
+                title: 'What would you like to drink?',
+                placeholder: 'Search beverages'
+            });
+        });
 	</script>
 @stop
