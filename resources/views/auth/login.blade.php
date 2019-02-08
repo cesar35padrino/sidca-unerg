@@ -7,7 +7,7 @@
 				<fieldset class="uk-fieldset">
 					{{ csrf_field() }}
 
-					<legend class="uk-legend uk-text-center">SIDCA - Registro</legend>
+					<legend class="uk-legend uk-text-center">SIDCA - Acceso</legend>
 					<div class="uk-margin">
 						@if ($errors->has('user'))
 						<div class="uk-alert-danger" uk-alert>

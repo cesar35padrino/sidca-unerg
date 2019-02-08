@@ -180,6 +180,13 @@ class TeacherController extends Controller
         }
     }
 
+    public function title_prof($id){
+        $teacher = Teacher::find($id);
+        // $teacher = ['haha'=>'hoho'];
+        return view('teacher/title')->with('teacher', $teacher);
+
+    }
+
     public function destroy($id)
     {
         //
