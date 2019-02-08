@@ -20,12 +20,26 @@ $(document).ready(function(){
 		    $('#first_name').val(respuesta[0].fic_pnombre);
 		    $('#last_name').val(respuesta[0].fic_snombre);
 		    $('#phone1').val(respuesta[0].fic_cel);
+		    $('#phone2').val(respuesta[0].fic_tel);
 		    $('#birthdate').val(respuesta[0].fic_fnac);
 		    $('#address').val(respuesta[0].fic_dir);
 		    $('#email1').val(respuesta[0].fic_email);
 	    });
+	    if ($('#ci_import').val() == '') {
+	        $('#first_name').val("");
+		    $('#last_name').val("");
+		    $('#phone1').val("");
+		    $('#phone2').val("");
+		    $('#birthdate').val("");
+		    $('#address').val("");
+		    $('#email1').val("");
+    	}
 	})
+
+	 	
 })
+
+
 
 // $(document).ready(function() {
 
