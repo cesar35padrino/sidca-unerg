@@ -18,6 +18,11 @@ class Nucleus extends Model
     	return $this->belongsTo(Headquarter::class);
     }
 
+    public function area()
+    {
+        return $this->belongsTo(Area::class);
+    }
+
     public function competition()
     {
         return $this->hasMany(competition::class);

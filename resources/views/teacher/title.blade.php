@@ -24,28 +24,42 @@
 <!-- ALERTAS -->
 </div>
 <div class=" uk-width-1-2@s uk-padding-small uk-background-secondary">
-	<form class="uk-grid-small" uk-grid method="POST" action="{{route('profesores.store')}}">
+	<form class="uk-grid-small" uk-grid method="POST" action="">
 		{{ csrf_field() }}
 
-		<legend class="uk-legend uk-text-center">SIDCA - Titulos</legend>
+		<legend class="uk-legend uk-text-center">TITULO</legend>
 		<div class="uk-width-1-1@s">
-			<h4 align="center">{{ $teacher->first_name }}&nbsp{{ $teacher->last_name }}</h4>
+			<h4 align="center">Docente: {{ $teacher->first_name }}&nbsp{{ $teacher->last_name }}</h4>
 		</div>
-		<div class="uk-width-1-2@s">
-			<label class="uk-form-label">Fecha de emision</label>
-			<input value="{{ old('title') }}" name="title" class="uk-input ci_import"  id="ci_import" type="number" placeholder="Titulo">
-		</div>
-		<div class="uk-width-1-2@s">
-			<label class="uk-form-label">Fecha de consignacion</label>
-			<input value="{{ old('title') }}" name="title" class="uk-input ci_import"  id="ci_import" type="number" placeholder="Titulo">
-		</div>
+
 		<div class="uk-width-1-1@s">
+			<label class="uk-form-label">Titulo</label>
 			<select id="select" class="select" name="title">
 				<option value="">Ninguno</option>
 			@foreach($titles as $title)
 				<option value="{{ $title->id }}">{{ $title->name }}</option>
 			@endforeach
 			</select>
+		</div>
+		<div class="uk-width-1-2@s">
+			<label class="uk-form-label">Fecha de emision</label>
+			<input value="{{ old('date_add') }}" name="date_add" class="uk-input"  id="" type="date" placeholder="Titulo">
+		</div>
+		<div class="uk-width-1-2@s">
+			<label class="uk-form-label">Fecha de consignacion</label>
+			<input value="{{ old('date_consigned') }}" name="date_consigned" class="uk-input"  id="" type="date" placeholder="Titulo">
+		</div>
+		<div class="uk-width-1-2@s">
+			<label class="uk-form-label">Universidad</label>
+			<input value="{{ old('date_consigned') }}" name="date_consigned" class="uk-input"  id="" type="text" placeholder="Universidad">
+		</div>
+		<div class="uk-width-1-2@s">
+			<label class="uk-form-label">Grado</label>
+			<input value="{{ old('date_consigned') }}" name="date_consigned" class="uk-input"  id="" type="text" placeholder="Grado">
+		</div>
+		<div class="uk-width-1-2@s">
+			<label class="uk-form-label">Programa</label>
+			<input value="{{ old('date_consigned') }}" name="date_consigned" class="uk-input"  id="" type="text" placeholder="Programa">
 		</div>
 		
 		<div class="uk-width-1-1@s">
@@ -61,7 +75,7 @@
 	<script>
 	$(".select").chosen({
 	    no_results_text: "Oops, no se encontraron resultados! para ",
-	    width: "45%",
+	    width: "100%",
 	    rtl: true
 	});
 	</script>

@@ -1,6 +1,38 @@
 @extends('layouts.template')
 @section('content')
 @include('layouts.alert')
+
+<div>
+	<ul>
+		<li>
+			<a href="{{ route('history.new',$teacher->id) }}" title="Historico docente">Historico docente</a>
+		</li>
+		<li>
+			<a href="{{ route('title.new',$teacher->id) }}" title="Titulos obtenidos">Titulos obtenidos</a>
+		</li>
+		<li>
+			<a href="{{ route('document.new',$teacher->id) }}" title="Documentos">Documentos</a>
+		</li>
+		<li>
+			<a href="{{ $teacher->id }}" title="Cursos realizados">Cursos realizados</a>
+		</li>
+		<li>
+			<a href="{{ $teacher->id }}" title="Experiencia laboral">Experiencia laboral</a>
+		</li>
+		<li>
+			<a href="{{ $teacher->id }}" title="Productos de investigacion">Productos de investigacion</a>
+		</li>
+		<li>
+			<a href="{{ $teacher->id }}" title="Participacion en eventos">Participacion en eventos</a>
+		</li>
+		<li>
+			<a href="{{ $teacher->id }}" title="Formacion de talentos">Formacion de talentos</a>
+		</li>
+		<li>
+			<a href="{{ $teacher->id }}" title="Actividades academicas, cientificas y tecnologicas">Actividades academicas, cientificas y tecnologicas</a>
+		</li>
+	</ul>
+</div>
 <div class=" uk-width-1-2@s uk-padding-small uk-background-secondary">
 	<form class="uk-grid-small" uk-grid method="POST" action="{{route('profesores.update',$teacher->id)}}">
 		{{ method_field('PATCH') }}

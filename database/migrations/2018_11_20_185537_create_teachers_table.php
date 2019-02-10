@@ -39,7 +39,6 @@ class CreateTeachersTable extends Migration
             $table->foreign('headquarter_id')->references('id')->on('headquarters')->onDelete('cascade');
             $table->foreign('roster_id')->references('id')->on('rosters')->onDelete('cascade');
             $table->foreign('title_id')->references('id')->on('titles')->onDelete('cascade');
-
         });
     }
 

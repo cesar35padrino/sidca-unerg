@@ -3,80 +3,64 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Area;
+use App\Nucleus;
 
-class areasController extends Controller
+class AreasController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        $areas = Area::all();
+        $nucleos = Nucleus::all();
+        return view('precargar_datos.area_academica')->with('areas',$areas)
+        ->with('nucleos',$nucleos);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $data = Request()->validate(
+        [
+            'area'          =>  'required|min:5|max:20',
+            'nuclei_id'     =>  'required',
+            'code'          =>  'required',
+            'dean'          =>  'required|min:5|max:30',
+            'resolution'    =>  'required',
+        ],
+        [
+            'area.required' =>  'El nombre del area es requerida!',
+            'area.min'      =>  'El nombre del area es muy corto!',
+            'area.max'      =>  'El nombre del area es muy largo!',
+            'code.required' =>  'El codigo del area es requerido!',
+            'dean.required' =>  'El nombre del decano es requerido!',
+            'dean.min'      =>  'El nombre del decano es muy corto!',
+            'dean.max'      =>  'El nombre del decano es muy largo!',
+        ]);
+
+        $area = Area::create($data);
+
+        return back()->with('info','Area agregada con exito!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
