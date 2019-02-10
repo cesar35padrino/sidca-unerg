@@ -29,11 +29,23 @@
 						@else
 						<div class="uk-navbar-right">
 							<ul class="uk-navbar-nav">
-								<li class="uk-active uk-visible@m"><a href="" data-uk-icon="home"></a></li>
-								<li class="uk-visible@s"><a href="/profesores/">PROFESOR</a></li>
-								<li class="uk-visible@s"><a href="#">NOMINA</a></li>
-								<li class="uk-visible@s"><a href="#">PRECARGAR DATOS</a></li>
-								<li><a class="uk-navbar-toggle" data-uk-toggle data-uk-navbar-toggle-icon uk-toggle="target: #offcanvas-slide"></a></li>
+								<li class="uk-active uk-visible@m">
+									<a href="" data-uk-icon="home"></a>
+								</li>
+								<li class="uk-visible@s">
+									<a href="/profesores/">PROFESOR</a>
+								</li>
+								<li class="uk-visible@s">
+									<a href="#">NOMINA</a></li>
+								<li class="uk-visible@s">
+									<a href="#">PRECARGAR DATOS</a>
+								</li>
+								<li class="uk-visible@s">
+									<a href="#">USUARIO</a>
+								</li>
+								<li>
+									<a class="uk-navbar-toggle" data-uk-toggle data-uk-navbar-toggle-icon uk-toggle="target: #offcanvas-slide"></a>
+								</li>
 							</ul>
 						</div>
 						@endguest
@@ -61,30 +73,44 @@
 					<li class="uk-parent">
 						<a href="#" >PROFESOR</a>
 						<ul class="uk-nav-sub">
-							<li><a href="{{route('profesores.create')}}">Registrar Profesor</a></li>
-							<li><a href="{{route('profesores.index')}}">Listado de Profesores</a></li>
+							<li><a href="{{route('profesores.create')}}">Registrar</a></li>
+							<li><a href="{{route('profesores.index')}}">Listado</a></li>
+							<li><a href="#">Expediente</a></li>
+							<li><a href="#">Titulos obtenidos</a></li>
+							<li><a href="#">Cursos realizados</a></li>
+							<li><a href="#">Experiencia laboral</a></li>
+							<li><a href="#">Participacion en eventos</a></li>
+							<li><a href="#">Productos de investigacion</a></li>
+							<li><a href="#">Formacion de talentos</a></li>
+							<li><a href="#">Actividades</a></li>
 						</ul>
 					</li>
 					<li class="uk-parent">
 						<a href="#" >NOMINA</a>
 						<ul class="uk-nav-sub">
-							<li><a href="#">SubMenu 1</a></li>
-							<li><a href="#">SubMenu 2</a></li>
-							<ul class="uk-nav-sub">
-								<li><a href="">SubMenu 3</a></li>
-								<li><a href="">SubMenu 4</a></li>
-							</ul>
+							<li><a href="#">Crear</a></li>
+							<li><a href="#">Seguimiento</a></li>
+							<li><a href="#">Consulta</a></li>
+							<li><a href="#">Relacion</a></li>
+							<li><a href="#">Devolucion</a></li>
 						</ul>
 					</li>
 					<li class="uk-parent">
 						<a href="#" >PRECARGAR DATOS</a>
 						<ul class="uk-nav-sub">
-							<li><a href="#">SubMenu 1</a></li>
-							<li><a href="#">SubMenu 2</a></li>
-							<ul class="uk-nav-sub">
-								<li><a href="">SubMenu 3</a></li>
-								<li><a href="">SubMenu 4</a></li>
-							</ul>
+							<li><a href="#">Movimiento</a></li>
+							<li><a href="#">Area Academica</a></li>
+							<li><a href="#">Periodo</a></li>
+							<li><a href="#">Programa</a></li>
+							<li><a href="#">Sede</a></li>
+							<li><a href="#">Unidad Curricular</a></li>
+						</ul>
+					</li>
+					<li class="uk-parent">
+						<a href="#" >USUARIO</a>
+						<ul class="uk-nav-sub">
+							<li><a href="#">Crear</a></li>
+							<li><a href="#">Ver</a></li>
 						</ul>
 					</li>
 					<li class="uk-nav-divider"></li>

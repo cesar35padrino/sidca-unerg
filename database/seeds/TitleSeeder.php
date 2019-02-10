@@ -5,11 +5,6 @@ use App\Title;
 
 class TitleSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
     Title::create([
@@ -172,49 +167,64 @@ class TitleSeeder extends Seeder
         "name"=>"TECNICO SUPERIOR EN ADMINISTRACION DE HIDROCARBUROS",
         "level"=>1
     ]);
-    Title::create([        "name"=>"INGENIERO AGRICOLA",
+    Title::create([
+        "name"=>"INGENIERO AGRICOLA",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO AGROINDUSTRIAL",
+    Title::create([
+        "name"=>"INGENIERO AGROINDUSTRIAL",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO AGRONOMO",
+    Title::create([
+        "name"=>"INGENIERO AGRONOMO",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO AGRONOMO DE PRODUCCION ANIMAL",
+    Title::create([
+        "name"=>"INGENIERO AGRONOMO DE PRODUCCION ANIMAL",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO AGRONOMO DE PRODUCCION VEGETAL",
+    Title::create([
+        "name"=>"INGENIERO AGRONOMO DE PRODUCCION VEGETAL",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO CIVIL",
+    Title::create([
+        "name"=>"INGENIERO CIVIL",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO DE ALIMENTOS",
+    Title::create([
+        "name"=>"INGENIERO DE ALIMENTOS",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO DE MANTENIMIENTO",
+    Title::create([
+        "name"=>"INGENIERO DE MANTENIMIENTO",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO DE MATERIALES",
+    Title::create([
+        "name"=>"INGENIERO DE MATERIALES",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO DE MINAS",
+    Title::create([
+        "name"=>"INGENIERO DE MINAS",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO DE PETROLEO",
+    Title::create([
+        "name"=>"INGENIERO DE PETROLEO",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO DE PRODUCCION",
+    Title::create([
+        "name"=>"INGENIERO DE PRODUCCION",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO DE PRODUCCION ANIMAL",
+    Title::create([
+        "name"=>"INGENIERO DE PRODUCCION ANIMAL",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO DE RECURSOS NATURALES RENOVABLES",
+    Title::create([
+        "name"=>"INGENIERO DE RECURSOS NATURALES RENOVABLES",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO DE SISTEMAS",
+    Title::create([
+        "name"=>"INGENIERO DE SISTEMAS",
         "level"=>2
     ]);
     Title::create([
@@ -265,7 +275,7 @@ class TitleSeeder extends Seeder
         "name"=>"TECNICO SUPERIOR EN EDUCACION INTEGRAL Y DIFICULTADES DE APRENDIZAJE",
         "level"=>1
     ]);
-    Title::create([1,
+    Title::create([
         "name"=>"ESPECIALIDAD",
         "level"=>3
     ]);
@@ -301,7 +311,8 @@ class TitleSeeder extends Seeder
         "name"=>"LICENCIADO  EN IDIOMAS MODERNOS MENCION INGLES",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO NAVAL",
+    Title::create([
+        "name"=>"INGENIERO NAVAL",
         "level"=>2
     ]);
     Title::create([
@@ -360,7 +371,7 @@ class TitleSeeder extends Seeder
         "name"=>"ZOOTECNISTA",
         "level"=>2
     ]);
-    Title::create([,
+    Title::create([
         "name"=>"PRIMARIA",
         "level"=>0
     ]);
@@ -376,10 +387,12 @@ class TitleSeeder extends Seeder
         "name"=>"TECNICO SUPERIOR CITOTECNOLOGO",
         "level"=>1
     ]);
-    Title::create([        "name"=>"LICENCIADO EN ADMINISTRACION DE EMPRESAS AGROPECUARIAS",
+    Title::create([
+        "name"=>"LICENCIADO EN ADMINISTRACION DE EMPRESAS AGROPECUARIAS",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN ADMINISTRACION DE EMPRESAS DE DISEÑO",
+    Title::create([
+        "name"=>"LICENCIADO EN ADMINISTRACION DE EMPRESAS DE DISEÑO",
         "level"=>2
     ]);
     Title::create([
@@ -490,11 +503,11 @@ class TitleSeeder extends Seeder
         "name"=>"PROFESOR. ESPECIALIDAD=>QUIMICA",
         "level"=>2
     ]);
-    Title::create([1,
+    Title::create([
         "name"=>"LICENCIADO EN CULTURA FISICA",
         "level"=>2
     ]);
-    Title::create([2,
+    Title::create([
         "name"=>"LICENCIADO EN GERONTOLOGIA",
         "level"=>2
     ]);
@@ -598,11 +611,11 @@ class TitleSeeder extends Seeder
         "name"=>"TECNICO SUPERIOR UNIVERSITARIO EN ADMINISTRACION DE RIESGOS Y SEGUROS.",
         "level"=>1
     ]);
-    Title::create([3,
+    Title::create([
         "name"=>"PROFESOR ESPECIALIDAD=>CIENCIAS SOCIALES",
         "level"=>2
     ]);
-    Title::create([4,
+    Title::create([
         "name"=>"INGENIERO PETROQUIMICO",
         "level"=>2
     ]);
@@ -658,115 +671,152 @@ class TitleSeeder extends Seeder
         "name"=>"TECNICO SUPERIOR UNIVERSITARIO EN ADMINISTRACION=>BANCARIA Y FINANCIERA",
         "level"=>1
     ]);
-    Title::create([        "name"=>"INGENIERO DE TELECOMUNICACIONES",
+    Title::create([        
+        "name"=>"INGENIERO DE TELECOMUNICACIONES",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO DEL AMBIENTE",
+    Title::create([        
+        "name"=>"INGENIERO DEL AMBIENTE",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO DEL AMBIENTE Y DE LOS RECURSOS NATURALES RENOVABLES",
+    Title::create([        
+        "name"=>"INGENIERO DEL AMBIENTE Y DE LOS RECURSOS NATURALES RENOVABLES",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO ELECTRICISTA",
+    Title::create([        
+        "name"=>"INGENIERO ELECTRICISTA",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO ELECTRONICO",
+    Title::create([        
+        "name"=>"INGENIERO ELECTRONICO",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO ELECTRONICO DE COMPUTACION",
+    Title::create([        
+        "name"=>"INGENIERO ELECTRONICO DE COMPUTACION",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO EN ADMINISTRACION DE OBRAS",
+    Title::create([        
+        "name"=>"INGENIERO EN ADMINISTRACION DE OBRAS",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO EN COMPUTACION",
+    Title::create([        
+        "name"=>"INGENIERO EN COMPUTACION",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO EN DISEÑO INDUSTRIAL",
+    Title::create([       
+        "name"=>"INGENIERO EN DISEÑO INDUSTRIAL",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO EN INDUSTRIA FORESTAL",
+    Title::create([       
+        "name"=>"INGENIERO EN INDUSTRIA FORESTAL",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO EN INFORMACION",
+    Title::create([        
+        "name"=>"INGENIERO EN INFORMACION",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO EN INFORMATICA",
+    Title::create([        
+        "name"=>"INGENIERO EN INFORMATICA",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO EN MANTENIMIENTO DE OBRAS",
+    Title::create([        
+        "name"=>"INGENIERO EN MANTENIMIENTO DE OBRAS",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO EN MANTENIMIENTO MECANICO",
+    Title::create([
+        "name"=>"INGENIERO EN MANTENIMIENTO MECANICO",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO EN TELECOMUNICACIONES",
+    Title::create([
+        "name"=>"INGENIERO EN TELECOMUNICACIONES",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO FORESTAL",
+    Title::create([
+        "name"=>"INGENIERO FORESTAL",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO GEODESTA",
+    Title::create([
+        "name"=>"INGENIERO GEODESTA",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO GEOFISICO",
+    Title::create([
+        "name"=>"INGENIERO GEOFISICO",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO GEOLOGO",
+    Title::create([
+        "name"=>"INGENIERO GEOLOGO",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO HIDROMETEOROLOGICO",
+    Title::create([
+        "name"=>"INGENIERO HIDROMETEOROLOGICO",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO INDUSTRIAL",
+    Title::create([
+        "name"=>"INGENIERO INDUSTRIAL",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO MECANICO",
+    Title::create([
+        "name"=>"INGENIERO MECANICO",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO MECANICO MENCION MANTENIMIENTO",
+    Title::create([
+        "name"=>"INGENIERO MECANICO MENCION MANTENIMIENTO",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO METALURGICO",
+    Title::create([
+        "name"=>"INGENIERO METALURGICO",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO PESQUERO",
+    Title::create([
+        "name"=>"INGENIERO PESQUERO",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO QUIMICO",
+    Title::create([
+        "name"=>"INGENIERO QUIMICO",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INSTITUCIONES DE EDUCACION MEDIA Y SUPERIOR",
+    Title::create([
+        "name"=>"INSTITUCIONES DE EDUCACION MEDIA Y SUPERIOR",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN ACUACULTURA",
+    Title::create([
+        "name"=>"LICENCIADO EN ACUACULTURA",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN ARTES MENCION MUSEOLOGIA",
+    Title::create([
+        "name"=>"LICENCIADO EN ARTES MENCION MUSEOLOGIA",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN BIOLOGIA MARINA",
+    Title::create([
+        "name"=>"LICENCIADO EN BIOLOGIA MARINA",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN CIENCIA Y CULTURA DE LA ALIMENTACION",
+    Title::create([
+        "name"=>"LICENCIADO EN CIENCIA Y CULTURA DE LA ALIMENTACION",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN CIENCIAS ACTUARIALES",
+    Title::create([
+        "name"=>"LICENCIADO EN CIENCIAS ACTUARIALES",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN CIENCIAS ESTADISTICAS",
+    Title::create([
+        "name"=>"LICENCIADO EN CIENCIAS ESTADISTICAS",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN CIENCIAS FISCALES - RENTAS",
+    Title::create([
+        "name"=>"LICENCIADO EN CIENCIAS FISCALES - RENTAS",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN COMERCIO INTERNACIONAL",
+    Title::create([
+        "name"=>"LICENCIADO EN COMERCIO INTERNACIONAL",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN ECONOMIA AGRICOLA",
+    Title::create([
+        "name"=>"LICENCIADO EN ECONOMIA AGRICOLA",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN ECONOMIA DE LA INDUSTRIA FORESTAL",
+    Title::create([
+        "name"=>"LICENCIADO EN ECONOMIA DE LA INDUSTRIA FORESTAL",
         "level"=>2
     ]);
     Title::create([
@@ -1029,7 +1079,7 @@ class TitleSeeder extends Seeder
         "name"=>"TECNICO SUPERIOR EN BANCA Y FINANZAS",
         "level"=>1
     ]);
-    Title::create([,
+    Title::create([
         "name"=>"BACHILLER",
         "level"=>0
     ]);
@@ -1109,31 +1159,40 @@ class TitleSeeder extends Seeder
         "name"=>"LICENCIADO EN EDUCACION MENCION ORIENTACION",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN ECONOMIA EMPRESARIAL",
+    Title::create([
+        "name"=>"LICENCIADO EN ECONOMIA EMPRESARIAL",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN EDUCACION MENCION CIENCIAS DE LA RELIGION",
+    Title::create([
+        "name"=>"LICENCIADO EN EDUCACION MENCION CIENCIAS DE LA RELIGION",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN EDUCACION MENCION CIENCIAS DEL DEPORTE",
+    Title::create([
+        "name"=>"LICENCIADO EN EDUCACION MENCION CIENCIAS DEL DEPORTE",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN EDUCACION MENCION PEDAGOGIA RELIGIOSA",
+    Title::create([
+        "name"=>"LICENCIADO EN EDUCACION MENCION PEDAGOGIA RELIGIOSA",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN EDUCACION MENCION TECNICA MERCANTIL",
+    Title::create([
+        "name"=>"LICENCIADO EN EDUCACION MENCION TECNICA MERCANTIL",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN EDUCACION INDUSTRIAL MENCION ELECTRICIDAD",
+    Title::create([
+        "name"=>"LICENCIADO EN EDUCACION INDUSTRIAL MENCION ELECTRICIDAD",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN EDUCACION INDUSTRIAL MENCION MECANICA",
+    Title::create([
+        "name"=>"LICENCIADO EN EDUCACION INDUSTRIAL MENCION MECANICA",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN EDUCACION MENCION AGROPECUARIA",
+    Title::create([
+        "name"=>"LICENCIADO EN EDUCACION MENCION AGROPECUARIA",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN EDUCACION MENCION FISICA,  DEPORTE Y RECREACION",
+    Title::create([
+        "name"=>"LICENCIADO EN EDUCACION MENCION FISICA,  DEPORTE Y RECREACION",
         "level"=>2
     ]);
     Title::create([
@@ -1164,7 +1223,7 @@ class TitleSeeder extends Seeder
         "name"=>"LICENCIADO EN ADMINISTRACION MENCION RECURSOS HUMANOS",
         "level"=>2
     ]);
-    Title::create([2,
+    Title::create([
         "name"=>"MAGISTER CS.",
         "level"=>4
     ]);
@@ -1364,7 +1423,8 @@ class TitleSeeder extends Seeder
         "name"=>"TECNICO SUPERIOR ESPECIALISTA EN RETARDO MENTAL Y DIFICULTADES DEL APRENDIZAJE",
         "level"=>1
     ]);
-    Title::create([        "name"=>"LICENCIADO EN ADMINISTRACION",
+    Title::create([
+        "name"=>"LICENCIADO EN ADMINISTRACION",
         "level"=>2
     ]);
     Title::create([
@@ -1375,13 +1435,16 @@ class TitleSeeder extends Seeder
         "name"=>"TECNICO SUPERIOR EN EDUCACION INTEGRAL",
         "level"=>1
     ]);
-    Title::create([        "name"=>"LICENCIADO EN EDUCACION MENCION FILOSOFIA",
+    Title::create([
+        "name"=>"LICENCIADO EN EDUCACION MENCION FILOSOFIA",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN EDUCACION MENCION GERENCIA",
+    Title::create([
+        "name"=>"LICENCIADO EN EDUCACION MENCION GERENCIA",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN EDUCACION MENCION INGLES",
+    Title::create([
+        "name"=>"LICENCIADO EN EDUCACION MENCION INGLES",
         "level"=>2
     ]);
     Title::create([
@@ -1416,7 +1479,7 @@ class TitleSeeder extends Seeder
         "name"=>"TECNICO SUPERIOR EN EMPRESAS TURISTICAS",
         "level"=>1
     ]);
-    Title::create([3,
+    Title::create([
         "name"=>"DOCTORADO",
         "level"=>5
     ]);
@@ -1492,10 +1555,12 @@ class TitleSeeder extends Seeder
         "name"=>"LICENCIADO EN LETRAS MENCION LENGUAS Y LITERATURAS CLASICAS",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN EDUCACION MENCION CASTELLANO Y LITERATURA",
+    Title::create([
+        "name"=>"LICENCIADO EN EDUCACION MENCION CASTELLANO Y LITERATURA",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN EDUCACION MENCION CIENCIAS SOCIALES",
+    Title::create([
+        "name"=>"LICENCIADO EN EDUCACION MENCION CIENCIAS SOCIALES",
         "level"=>2
     ]);
     Title::create([
@@ -1886,50 +1951,64 @@ class TitleSeeder extends Seeder
         "name"=>"TECNICO SUPERIOR EN INSPECCION SANITARIA",
         "level"=>1
     ]);
-    Title::create([4,
+    Title::create([
         "name"=>"POST DOCTORADO",
         "level"=>6
     ]);
-    Title::create([        "name"=>"LICENCIADO EN EDUCACION MENCION LENGUAS EXTRANJERAS",
+    Title::create([
+        "name"=>"LICENCIADO EN EDUCACION MENCION LENGUAS EXTRANJERAS",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN EDUCACION MENCION LENGUAS MODERNAS",
+    Title::create([
+        "name"=>"LICENCIADO EN EDUCACION MENCION LENGUAS MODERNAS",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN ESTUDIOS POLITICOS Y ADMINISTRATIVOS",
+    Title::create([
+        "name"=>"LICENCIADO EN ESTUDIOS POLITICOS Y ADMINISTRATIVOS",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN GERENCIA AGROINDUSTRIAL",
+    Title::create([
+        "name"=>"LICENCIADO EN GERENCIA AGROINDUSTRIAL",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN GERENCIA DE RECURSOS HUMANOS",
+    Title::create([
+        "name"=>"LICENCIADO EN GERENCIA DE RECURSOS HUMANOS",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN HISTORIA ECLESIASTICA",
+    Title::create([
+        "name"=>"LICENCIADO EN HISTORIA ECLESIASTICA",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN LETRAS MENCION HISTORIA DEL ARTE",
+    Title::create([
+        "name"=>"LICENCIADO EN LETRAS MENCION HISTORIA DEL ARTE",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN LETRAS MENCION LENGUA Y LITERATURA MODERNA",
+    Title::create([
+        "name"=>"LICENCIADO EN LETRAS MENCION LENGUA Y LITERATURA MODERNA",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN MEDIOS AUDIOVISUALES",
+    Title::create([
+        "name"=>"LICENCIADO EN MEDIOS AUDIOVISUALES",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN MUSICA MENCION MUSICOLOGIA",
+    Title::create([
+        "name"=>"LICENCIADO EN MUSICA MENCION MUSICOLOGIA",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN TECNOLOGIA DE ALIMENTOS",
+    Title::create([
+        "name"=>"LICENCIADO EN TECNOLOGIA DE ALIMENTOS",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN TEOLOGIA MENCION FILOSOFIA",
+    Title::create([
+        "name"=>"LICENCIADO EN TEOLOGIA MENCION FILOSOFIA",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN ADMINISTRACION COMERCIAL",
+    Title::create([
+        "name"=>"LICENCIADO EN ADMINISTRACION COMERCIAL",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN ADMINISTRACION DE EMPRESAS",
+    Title::create([
+        "name"=>"LICENCIADO EN ADMINISTRACION DE EMPRESAS",
         "level"=>2
     ]);
     Title::create([
@@ -2328,7 +2407,7 @@ class TitleSeeder extends Seeder
         "name"=>"LICENCIADO EN CIENCIAS NAVALES Y ALFEREZ DE NAVIO",
         "level"=>2
     ]);
-    Title::create([5,
+    Title::create([
         "name"=>"INGENIERO EN AGROALIMENTACION",
         "level"=>2
     ]);
@@ -2548,53 +2627,68 @@ class TitleSeeder extends Seeder
         "name"=>"TECNICO SUPERIOR  EN TECNOLOGIA DE  INFORMACION Y DOCUMENTACION",
         "level"=>1
     ]);
-    Title::create([,
+    Title::create([
         "name"=>"NO DEFINIDA",
         "level"=>0
     ]);
-    Title::create([       "name"=>"ABOGADO",
+    Title::create([
+        "name"=>"ABOGADO",
         "level"=>2
     ]);
-    Title::create([       "name"=>"ANALISTA DE SISTEMAS",
+    Title::create([
+        "name"=>"ANALISTA DE SISTEMAS",
         "level"=>0
     ]);
-    Title::create([       "name"=>"ANTROPOLOGO",
+    Title::create([
+        "name"=>"ANTROPOLOGO",
         "level"=>2
     ]);
-    Title::create([       "name"=>"ARQUITECTO",
+    Title::create([
+        "name"=>"ARQUITECTO",
         "level"=>2
     ]);
-    Title::create([       "name"=>"CONTADOR PUBLICO",
+    Title::create([
+        "name"=>"CONTADOR PUBLICO",
         "level"=>2
     ]);
-    Title::create([       "name"=>"CRIMINOLOGO",
+    Title::create([
+        "name"=>"CRIMINOLOGO",
         "level"=>2
     ]);
-    Title::create([       "name"=>"ECONOMISTA",
+    Title::create([
+        "name"=>"ECONOMISTA",
         "level"=>2
     ]);
-    Title::create([       "name"=>"ECONOMISTA AGRICOLA",
+    Title::create([
+        "name"=>"ECONOMISTA AGRICOLA",
         "level"=>2
     ]);
-    Title::create([       "name"=>"FARMACEUTICO",
+    Title::create([
+        "name"=>"FARMACEUTICO",
         "level"=>2
     ]);
-    Title::create([        "name"=>"GEOLOGO",
+    Title::create([
+        "name"=>"GEOLOGO",
         "level"=>2
     ]);
-    Title::create([        "name"=>"LICENCIADO EN GEOQUIMICA",
+    Title::create([
+        "name"=>"LICENCIADO EN GEOQUIMICA",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO DE PRODUCCION AGROPECUARIA",
+    Title::create([
+        "name"=>"INGENIERO DE PRODUCCION AGROPECUARIA",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO DEL AMBIENTE Y DE LOS RECURSOS NATURALES",
+    Title::create([
+        "name"=>"INGENIERO DEL AMBIENTE Y DE LOS RECURSOS NATURALES",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO ELECTRONICO MENCION TELECOMUNICACIONES",
+    Title::create([
+        "name"=>"INGENIERO ELECTRONICO MENCION TELECOMUNICACIONES",
         "level"=>2
     ]);
-    Title::create([        "name"=>"INGENIERO AERONAUTICO",
+    Title::create([
+        "name"=>"INGENIERO AERONAUTICO",
         "level"=>2
     ]);
     Title::create([
@@ -2669,43 +2763,43 @@ class TitleSeeder extends Seeder
         "name"=>"TECNICO SUPERIOR EN PROCESOS QUIMICOS MENCION TECNOLOGIA Y DISEÑO",
         "level"=>1
     ]);
-    Title::create([6,
+    Title::create([
         "name"=>"LICENCIADO EN INSPECCION EN SALUD PUBLICA",
         "level"=>2
     ]);
-    Title::create([1,
+    Title::create([
         "name"=>"CURSO OPERADOR WINDOWS Y OFFICE",
         "level"=>0
     ]);
-    Title::create([2,
+    Title::create([
         "name"=>"CURSO DE AUXILIAR DE CONTABILIDAD",
         "level"=>0
     ]);
-    Title::create([3,
+    Title::create([
         "name"=>"CURSO INTRODUCCION A LA INFORMATICA",
         "level"=>0
     ]);
-    Title::create([4,
+    Title::create([
         "name"=>"CURSO BASICO DE PUBLICIDAD",
         "level"=>0
     ]);
-    Title::create([5,
+    Title::create([
         "name"=>"CURSO DE FORMACION DE INSTRUCTORES EN EMPRESAS",
         "level"=>0
     ]);
-    Title::create([6,
+    Title::create([
         "name"=>"CURSO DE REDACCION DE CORRESPONDENCIA",
         "level"=>0
     ]);
-    Title::create([7,
+    Title::create([
         "name"=>"CURSO DE INGLES BASICO",
         "level"=>0
     ]);
-    Title::create([8,
+    Title::create([
         "name"=>"CURSO SECRETARIADO COMERCIAL",
         "level"=>0
     ]);
-    Title::create([9,
+    Title::create([
         "name"=>"CURSO BASICO DE MERCADOTECNIA",
         "level"=>0
     ]);
@@ -2713,59 +2807,59 @@ class TitleSeeder extends Seeder
         "name"=>"LICENCIADO EN ADMINISTRACION MENCION INFORMATICA",
         "level"=>2
     ]);
-    Title::create([0,
+    Title::create([
         "name"=>"CURSO GESTION EFICAZ DE SERVICIOS FINANCIEROS",
         "level"=>0
     ]);
-    Title::create([1,
+    Title::create([
         "name"=>"CURSO LEGITIMACION DE CAPITALES",
         "level"=>0
     ]);
-    Title::create([2,
+    Title::create([
         "name"=>"CURSO TALLER-SEMINARIO SOBRE ACTUALIZACION Y DISEÑO DE LOS MANUALES INSTITUCIONALES",
         "level"=>0
     ]);
-    Title::create([3,
+    Title::create([
         "name"=>"CURSO TALLER DE INVESTIGACION SOCIAL COMUNITARIA",
         "level"=>0
     ]);
-    Title::create([4,
+    Title::create([
         "name"=>"CURSO TALLER SOBRE INCIDENCIAS DE LA LEY ORGANICA DE LA CONTRALORIA GENERAL DE LA REPUBLICA EN LAS UNIVERSIDADES",
         "level"=>0
     ]);
-    Title::create([5,
+    Title::create([
         "name"=>"SEMINARIO DE GERENCIA PUBLICA COMPETITIVA",
         "level"=>0
     ]);
-    Title::create([6,
+    Title::create([
         "name"=>"CURSO DE PRIMEROS AUXILIOS",
         "level"=>0
     ]);
-    Title::create([7,
+    Title::create([
         "name"=>"CURSO DE INTERNET BASICO",
         "level"=>0
     ]);
-    Title::create([8,
+    Title::create([
         "name"=>"CURSO FORO DE DESARROLLO ECONOMICO",
         "level"=>0
     ]);
-    Title::create([9,
+    Title::create([
         "name"=>"CURSO TALLER NACIONAL DE CONSULTA A EXPERTOS SOBRE NORMAS DE CLASIFICACION DE LAS TIERRAS RURALES VENEZOLANAS",
         "level"=>0
     ]);
-    Title::create([0,
+    Title::create([
         "name"=>"CURSO INDUCCION A STAR OFFICE",
         "level"=>0
     ]);
-    Title::create([1,
+    Title::create([
         "name"=>"CURSO I JORNADAS DE VINCULACION UNIVERSIDAD SECTOR PRODUCTIVO EN EL MARCO DE LA SOCIEDAD GLOBALIZADA",
         "level"=>0
     ]);
-    Title::create([2,
+    Title::create([
         "name"=>"CURSO CONFERENCIA DE LAS NUEVAS TECNOLOGIAS DE INFORMACION",
         "level"=>0
     ]);
-    Title::create([3,
+    Title::create([
         "name"=>"CURSO TALLER LA INVESTIGACION Y LA EXTENSION EN LA UNERG, UNA NUEVA VISION.",
         "level"=>0
     ]);
