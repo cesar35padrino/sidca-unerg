@@ -69,7 +69,9 @@
 			<div class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide">
 				<button class="uk-offcanvas-close uk-close uk-icon" type="button" data-uk-close></button>
 				<ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
-					<li style="background-color: #ff5; color: #000; font-family: arial;">Usuario: {{ \Auth::User()->user }} / Tipo: {{ \Auth::User()->role->rol }}</li>
+					@auth
+						<li style="background-color: #ff5; color: #000; font-family: arial;">Usuario: {{ \Auth::User()->user }} / Tipo: {{ \Auth::User()->role->rol }}</li>
+					@endauth
 					<li class="uk-active"><a href="#">Menu Principal</a></li>
 					<li class="uk-parent">
 						<a href="#" >PROFESOR</a>
