@@ -20,6 +20,7 @@
 				<tr>
 					<th>id</th>
 					<th>Sede</th>
+					<th>Opcion</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -27,6 +28,12 @@
 				<tr>
 					<td>{{$i++}}</td>
 					<td>{{ $sede->headquarter }}</td>
+					<td>
+						<form action="{{ route('sedes.destroy',$sede->id) }}" method="post">
+							<input type="hidden" name="_method" value="DELETE">
+							<input type="submit" name="eliminar" value="eliminar">
+						</form>
+					</td>
 				</tr>
 				@endforeach
 			</tbody>

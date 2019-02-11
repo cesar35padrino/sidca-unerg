@@ -32,6 +32,7 @@
 					<th>id</th>
 					<th>Nucleo</th>
 					<th>Sede</th>
+					<th>Opcion</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -40,6 +41,12 @@
 					<td>{{$i++}}</td>
 					<td>{{ $nucleo->nucleus }}</td>
 					<td>{{ ($nucleo->headquarter)?$nucleo->headquarter->headquarter:'' }}</td>
+					<td>
+						<form action="{{ route('nucleos.destroy',$nucleo->id) }}" method="post">
+							<input type="hidden" name="_method" value="DELETE">
+							<input type="submit" name="eliminar" value="eliminar">
+						</form>
+					</td>
 				</tr>
 				@endforeach
 			</tbody>

@@ -1,21 +1,20 @@
 @extends('layouts.template')
 @section('content')
 <!-- REPORT -->
-
-<div class=" uk-width-1-2@s uk-padding-small uk-background-secondary uk-width-medium uk-overflow-auto">
+<div class=" uk-width-1-1@s uk-padding-small uk-background-secondary uk-overflow-auto">
 	<!-- TABLA DE DATOS -->
 
 	<div class="uk-width-1-1" >
-		<h3 class="uk-align-left">Reporte Sidca:</h3>
+		<h3 class="uk-align-left">PROFESORES</h3>
 		<div class="uk-align-right uk-flex uk-flex-stretch">
-			<form class="uk-search uk-search-default">
+			<form class="uk-search uk-search-default" method="get" action="{{ route('profesores.index') }}">
 				<span uk-search-icon></span>
-				<input class="uk-search-input" type="search" placeholder="Search...">
+				<input class="uk-search-input" name="search" type="search" placeholder="Buscar">
 			</form>
 		</div>
 	</div>
 
-	<table class="uk-table uk-table-small uk-table-striped uk-table-small uk-table-divider">
+	<table class="uk-table uk-table-expand uk-table-striped uk-table-divider">
 		<thead>
 			<tr>
 				<th>Nro</th>
@@ -40,9 +39,8 @@
 				<td>{{ $teacher->status }}</td>
 
 				<td>
-					<!-- #modal-sections -->
-					<a href="{{ route('profesores.edit', $teacher->id) }}" uk-toggle uk-icon="file-edit"></a>
-					<a href="" uk-icon="info"></a>
+					<a title="Editar profesor" href="{{ route('profesores.edit', $teacher->id) }}" uk-toggle uk-icon="file-edit" ></a>
+					<a title="Expediente del profesor" href="{{ route('profesores.casefile', $teacher->id) }}" uk-icon="info"></a>
 				</td>
 
 			</tr>

@@ -58,6 +58,7 @@ class NucleiController extends Controller
 
     public function destroy($id)
     {
-        //
+        $nucleo = Nucleus::find($id)->delete();
+        return back()->with('info','Nucleo eliminado con exito!');
     }
 }

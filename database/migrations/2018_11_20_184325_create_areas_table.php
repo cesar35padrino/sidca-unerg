@@ -16,9 +16,9 @@ class CreateAreasTable extends Migration
         Schema::create('areas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('area');
-            $table->string('dean');
-            $table->string('code');
-            $table->string('resolution');
+            $table->string('dean')->nullable();
+            $table->string('code')->nullable();
+            $table->string('resolution')->nullable();
             $table->unsignedInteger('nuclei_id');
 
             $table->foreign('nuclei_id')->references('id')->on('nuclei')->onDelete('cascade');

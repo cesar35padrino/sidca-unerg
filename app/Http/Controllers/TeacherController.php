@@ -22,10 +22,9 @@ class TeacherController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-
-        $teachers = Teacher::paginate(5);
+        $teachers = Teacher::orderBy('id','DESC')->search($request->search)->paginate(5);
         $sedes = Headquarter::all();
         $paises = Country::all();
         $clasificaciones = Classification::all();
@@ -58,7 +57,7 @@ class TeacherController extends Controller
 
     public function store(Request $request)
     {
-        // Reemplazar informacion por la que esta en el CNE
+        // True/1 para Reemplazar informacion por la que esta en el CNE
         if (0) {
             $ci = $request->identity;
             $datosValidados = SearchCurl::get('V', $ci);
@@ -139,13 +138,12 @@ class TeacherController extends Controller
 
             return redirect(Route('profesores.edit',$profesor->id))->with('info','Se ha registrado de manera exitosa!');
         }
-
-        // return redirect(Route(''))->with('info','Se ha registrado de manera exitosa!');
     }
 
-    public function show()
+    public function show($id)
     {
-        return view('teacher.show');
+        $teacher = Teacher::find($id);
+        return view('teacher.show')->with('teacher',$teacher);
     }
 
     public function edit($id)
@@ -220,6 +218,10 @@ class TeacherController extends Controller
             return "No existe";
         }
     }
+
+    // public function search(){
+    //     return
+    // } 
 
     public function destroy($id)
     {

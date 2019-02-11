@@ -8,7 +8,7 @@ class Program extends Model
 {
     public $timestamps = false;
     
-    protected = [
+    protected $fillable = [
     	'program',
         'director',
         'resolution', 
@@ -19,8 +19,6 @@ class Program extends Model
     {
     	return $this->belongsTo(Area::class);
     }
-
-    
 
     public function subjects()
     {

@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Substitution extends Model
 {
     protected $fillable = [
-    
-    'teacher_replacement','teacher_replace','roster_id'
+    	'teacher_replacement','teacher_replace','roster_id'
 	];
 
 	public function roster(){

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>SIDCA | Registro</title>
+	<title>SIDCA</title>
 	<link rel="icon" href="{{asset('img/Unerg-1.png')}}">
 	<!-- CSS FILES -->
 	<link rel="stylesheet" href="{{asset('css/uikit.min.css')}}" />
@@ -21,7 +21,7 @@
 					<nav class="uk-navbar-container uk-navbar-transparent" data-uk-navbar>
 						<div class="uk-navbar-left">
 							<div class="uk-navbar-item">
-								<a class="uk-logo" href="cover.html"><img src="{{asset('img/image.png')}}" alt="Logo"><span>SIDCA</span></a>
+								<a class="uk-logo" href="{{ url('/') }}"><img src="{{asset('img/image.png')}}" alt="Logo"><span>SIDCA</span></a>
 							</div>
 						</div>
 						@guest
@@ -69,13 +69,14 @@
 			<div class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide">
 				<button class="uk-offcanvas-close uk-close uk-icon" type="button" data-uk-close></button>
 				<ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
+					<li style="background-color: #ff5; color: #000; font-family: arial;">Usuario: {{ \Auth::User()->user }} / Tipo: {{ \Auth::User()->role->rol }}</li>
 					<li class="uk-active"><a href="#">Menu Principal</a></li>
 					<li class="uk-parent">
 						<a href="#" >PROFESOR</a>
 						<ul class="uk-nav-sub">
 							<li><a href="{{route('profesores.create')}}">Registrar</a></li>
 							<li><a href="{{route('profesores.index')}}">Listado</a></li>
-							<li><a href="#">Expediente</a></li>
+							{{-- <li><a href="{{ route('expedientes.index') }}">Expediente</a></li> --}}
 							<li><a href="#">Titulos obtenidos</a></li>
 							<li><a href="#">Cursos realizados</a></li>
 							<li><a href="#">Experiencia laboral</a></li>
@@ -98,19 +99,20 @@
 					<li class="uk-parent">
 						<a href="#" >PRECARGAR DATOS</a>
 						<ul class="uk-nav-sub">
-							<li><a href="#">Movimiento</a></li>
-							<li><a href="#">Area Academica</a></li>
-							<li><a href="#">Periodo</a></li>
-							<li><a href="#">Programa</a></li>
-							<li><a href="#">Sede</a></li>
-							<li><a href="#">Unidad Curricular</a></li>
+							{{-- <li><a href="#">Movimiento</a></li> --}}
+							<li><a href="{{ route('periodos.create') }}">Periodo</a></li>
+							<li><a href="{{ route('programas.create') }}">Programa</a></li>
+							<li><a href="{{ route('areas.create') }}">Area Academica</a></li>
+							<li><a href="{{ route('sedes.create') }}">Sede</a></li>
+							<li><a href="{{ route('nucleos.create') }}">Nucleo</a></li>
+							<li><a href="{{ route('unidad-curricular.create') }}">Unidad Curricular</a></li>
 						</ul>
 					</li>
 					<li class="uk-parent">
 						<a href="#" >USUARIO</a>
 						<ul class="uk-nav-sub">
-							<li><a href="#">Crear</a></li>
-							<li><a href="#">Ver</a></li>
+							<li><a href="{{ Route('usuarios.create') }}">Crear</a></li>
+							<li><a href="{{ Route('usuarios.index') }}">Todos</a></li>
 						</ul>
 					</li>
 					<li class="uk-nav-divider"></li>
@@ -122,8 +124,7 @@
 					</form>
 				</li>
 				</ul>
-				<h3>¿Porque Sidca?</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<p>Proporcionar a la institución en sus diferentes niveles e instancias, la información completa y fidedigna del personal docente – investigador unerg, de acuerdo al registro exhaustivo y confiable de su trayectoria, desde el inicio hasta el momento en que sea requerido.</p>
 			</div>
 		</div>
 		<!-- /OFFCANVAS -->

@@ -48,6 +48,26 @@
 			<button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" name="boton">Guardar</button>
 		</div>
 	</form>
+	<div>
+		<ul>
+			@foreach($teacher->documents as $document)
+				<li>
+					@if($document->type == 'cedula')
+						<h4>CEDULA</h4>
+						<img width="300" src="{{asset($document->type)}}/{{ $document->file }}" alt="{{ $document->type }}">
+					@endif
+					@if($document->type == 'p.nacimiento')
+						<h4>PARTIDA DE NACIMIENTO</h4>
+						<img width="300" src="{{asset($document->type)}}/{{ $document->file }}" alt="{{ $document->type }}">
+					@endif
+					@if($document->type == 'foto')
+						<h4>FOTOGRAFIA</h4>
+						<img width="300" src="{{asset($document->type)}}/{{ $document->file }}" alt="{{ $document->type }}">
+					@endif
+				</li>
+			@endforeach
+		</ul>
+	</div>
 </div>
 <!-- /FORM -->
 @endsection

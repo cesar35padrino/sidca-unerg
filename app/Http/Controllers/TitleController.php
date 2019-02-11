@@ -27,4 +27,9 @@ class TitleController extends Controller
 
         return back()->with('info','Titulo añadido de manera exitosa!');
     }
+
+    public function destroy($id){
+        $titulo = Title::find($id)->delete();
+        return back()->with('info','Titulo eliminado con exito!');
+    }
 }

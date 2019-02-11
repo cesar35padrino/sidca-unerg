@@ -53,6 +53,7 @@ class HeadquartersController extends Controller
 
     public function destroy($id)
     {
-        //
+        $sede = Headquarter::find($id)->delete();
+        return back()->with('info','Sede eliminada con exito!');
     }
 }
