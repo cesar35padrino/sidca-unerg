@@ -22,6 +22,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 	Route::resource('/periodos','PeridController');
 // PRECARGAR DATOS!
 
+// NOMINA D:
+	Route::resource('/nominas','RosterController');
+// NOMINA D:
+
 
 // PROFESOR
 	Route::resource('/profesores','TeacherController');

@@ -15,10 +15,13 @@ class AreasController extends Controller
 
     public function create()
     {
+        $i = 1;
         $areas = Area::all();
         $nucleos = Nucleus::all();
-        return view('precargar_datos.area_academica')->with('areas',$areas)
-        ->with('nucleos',$nucleos);
+        return view('precargar_datos.area_academica')
+        ->with('areas',$areas)
+        ->with('nucleos',$nucleos)
+        ->with('i',$i);
     }
 
     public function store(Request $request)

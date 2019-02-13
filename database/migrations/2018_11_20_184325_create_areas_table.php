@@ -19,7 +19,7 @@ class CreateAreasTable extends Migration
             $table->string('dean')->nullable();
             $table->string('code')->nullable();
             $table->string('resolution')->nullable();
-            $table->unsignedInteger('nuclei_id');
+            $table->unsignedInteger('nuclei_id')->nullable();
 
             $table->foreign('nuclei_id')->references('id')->on('nuclei')->onDelete('cascade');
         });

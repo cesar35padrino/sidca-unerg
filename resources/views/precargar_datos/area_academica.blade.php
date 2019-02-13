@@ -35,9 +35,9 @@
 				<tr>
 					<th>id</th>
 					<th>Area</th>
-					<th>Nucleo</th>
+					{{-- <th>Nucleo</th> --}}
 					<th>Decano</th>
-					<th>Resolucion</th>
+					{{-- <th>Resolucion</th> --}}
 					<th>Opcion</th>
 				</tr>
 			</thead>
@@ -46,9 +46,9 @@
 				<tr>
 					<td>{{$i++}}</td>
 					<td>{{ $area->area }}</td>
-					<td>{{ ($area->nuclei)?'tiene relacion':'no tiene relacion' }}</td>
+					{{-- <td>{{ ($area->nuclei)?'tiene relacion':'no tiene relacion' }}</td> --}}
 					<td>{{ $area->dean }}</td>
-					<td>{{ $area->resolution }}</td>
+					{{-- <td>{{ $area->resolution }}</td> --}}
 					<td>
 						<form action="{{ route('areas.destroy',$area->id) }}" method="post">
 							<input type="hidden" name="_method" value="DELETE">
