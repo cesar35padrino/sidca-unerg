@@ -1,12 +1,14 @@
 @extends('layouts.template')
 @section('content')
+@include('layouts.alert')
+
 <table class="uk-table uk-table-divider uk-table-striped">
 	<thead>
 		<tr>
-			<th>usuario</th>
-			<th>nombres</th>
-			<th>apellidos</th>
-			<th>accion</th>
+			<th>Uuario</th>
+			<th>Nombres</th>
+			<th>Apellidos</th>
+			<th>Opcion</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -16,9 +18,11 @@
 			<td>{{ $usuario->first_name }}</td>
 			<td>{{ $usuario->last_name }}</td>
 			<td>
-				<a href="#">Ver</a>
-				<a href="#">Editar</a>
-				<a href="#">Eliminar</a>
+				<form action="{{ route('usuarios.destroy',$usuario->id) }}" method="post">
+					{{ csrf_field() }}
+					<input type="hidden" name="_method" value="DELETE">
+					<button type="submit">Eliminar</button>
+				</form>
 			</td>
 		</tr>
 		@endforeach

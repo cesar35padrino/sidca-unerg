@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use App\Http\Requests\TeacherRequest;
 use App\Http\Requests\UpdateRequest;
 use App\Teacher;
+use App\Title;
 use App\Email;
 use App\State;
 use App\Country;
 use App\Headquarter;
 use App\Classification;
 use App\Phone;
+use App\Http\Controllers\Scripts\SearchCurl;
 
 class TeacherController extends Controller
 {
@@ -20,14 +22,14 @@ class TeacherController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-
-        $teachers = Teacher::paginate(5);
+        $teachers = Teacher::orderBy('id','DESC')->search($request->search)->paginate(5);
         $sedes = Headquarter::all();
         $paises = Country::all();
         $clasificaciones = Classification::all();
         $estados = State::all();
+
         // contadores
         $i = 1;
         return view('teacher/index')
@@ -55,47 +57,93 @@ class TeacherController extends Controller
 
     public function store(Request $request)
     {
-        $profesor = Teacher::create([
-            'first_name'    =>  $request->first_name,
-            'last_name'     =>  $request->last_name,
-            'identity'      =>  $request->identity,
-            'birthdate'     =>  $request->birthdate,
-            'address'       =>  $request->address,
-            'countrie_id'   =>  $request->countrie_id,
-            'classification_id'    =>  $request->classification_id,
-            'headquarter_id'      =>  $request->headquarters_id,
-            'status'        =>  $request->status,
-            'observation'   =>  ($request->observation)?$request->observation:'NULL',
-            'state_id'      =>  $request->state_id,
-            'municipality_id'      =>  $request->municipality_id,
-            'parish_id'     =>  $request->parish_id,
-        ]);
+        // True/1 para Reemplazar informacion por la que esta en el CNE
+        if (0) {
+            $ci = $request->identity;
+            $datosValidados = SearchCurl::get('V', $ci);
+            $cne = json_decode($datosValidados, TRUE);
 
-        for ($i=1; $i < 3; $i++) {
-            if (!empty($request->input('phone'.$i))) {
-                $telefono= Phone::create([
-                    'type'  =>  ($i == 1)?'MOVIL':'CASA',
-                    'number'    =>  ($i == 1)?$request->phone1:$request->phone2,
-                    'teacher_id'    => $profesor->id
-                ]);
+            $profesor = Teacher::create([
+            'first_name'        =>  ($cne['nombres'])?$cne['nombres']:$request->first_name,
+            'last_name'         =>  ($cne['apellidos'])?$cne['apellidos']:$request->last_name,
+            'identity'          =>  $request->identity,
+            'birthdate'         =>  $request->birthdate,
+            'address'           =>  $request->address,
+            'countrie_id'       =>  $request->countrie_id,
+            'classification_id' =>  $request->classification_id,
+            'headquarter_id'    =>  $request->headquarters_id,
+            'status'            =>  $request->status,
+            'observation'       =>  ($request->observation)?$request->observation:'NULL',
+            'state_id'          =>  $request->state_id,
+            'municipality_id'   =>  $request->municipality_id,
+            'parish_id'         =>  $request->parish_id,
+            ]);
+
+            for ($i=1; $i < 3; $i++) {
+                if (!empty($request->input('phone'.$i))) {
+                    $telefono= Phone::create([
+                        'type'  =>  ($i == 1)?'MOVIL':'CASA',
+                        'number'    =>  ($i == 1)?$request->phone1:$request->phone2,
+                        'teacher_id'    => $profesor->id
+                    ]);
+                }
             }
-        }
 
-        for ($e=0; $e < 3; $e++) {
-            if (!empty($request->input('email'.$e))) {
-                $correo= Email::create([
-                    'email'    =>  ($e == 1)?$request->email1:$request->email2,
-                    'teacher_id'    => $profesor->id
-                ]);
+            for ($e=0; $e < 3; $e++) {
+                if (!empty($request->input('email'.$e))) {
+                    $correo= Email::create([
+                        'email'    =>  ($e == 1)?$request->email1:$request->email2,
+                        'teacher_id'    => $profesor->id
+                    ]);
+                }
             }
-        }
 
-        return back()->with('info','Se ha registrado de manera exitosa!');
+            return redirect(Route('profesores.edit',$profesor->id))->with('info','Se ha registrado de manera exitosa!');
+
+        }else{
+            $profesor = Teacher::create([
+            'first_name'        =>  $request->first_name,
+            'last_name'         =>  $request->last_name,
+            'identity'          =>  $request->identity,
+            'birthdate'         =>  $request->birthdate,
+            'address'           =>  $request->address,
+            'countrie_id'       =>  $request->countrie_id,
+            'classification_id' =>  $request->classification_id,
+            'headquarter_id'    =>  $request->headquarters_id,
+            'status'            =>  $request->status,
+            'observation'       =>  ($request->observation)?$request->observation:'NULL',
+            'state_id'          =>  $request->state_id,
+            'municipality_id'   =>  $request->municipality_id,
+            'parish_id'         =>  $request->parish_id,
+            ]);
+
+            for ($i=1; $i < 3; $i++) {
+                if (!empty($request->input('phone'.$i))) {
+                    $telefono= Phone::create([
+                        'type'  =>  ($i == 1)?'MOVIL':'CASA',
+                        'number'    =>  ($i == 1)?$request->phone1:$request->phone2,
+                        'teacher_id'    => $profesor->id
+                    ]);
+                }
+            }
+
+            for ($e=0; $e < 3; $e++) {
+                if (!empty($request->input('email'.$e))) {
+                    $correo= Email::create([
+                        'email'    =>  ($e == 1)?$request->email1:$request->email2,
+                        'teacher_id'    => $profesor->id
+                    ]);
+                }
+            }
+
+            return redirect(Route('profesores.edit',$profesor->id))->with('info','Se ha registrado de manera exitosa!');
+        }
     }
 
-    public function show()
+    public function show($id)
     {
-        return view('teacher.show');
+        $teacher = Teacher::find($id);
+        return view('teacher.show')->with('teacher',$teacher);
     }
 
     public function edit($id)
@@ -110,7 +158,6 @@ class TeacherController extends Controller
         // contadores
         $i = 1;
         $j = 1;
-        // dd($count_emails);
 
         return view('teacher.edit')
             ->with('count_phones',$count_phones)
@@ -163,34 +210,18 @@ class TeacherController extends Controller
 
     public function design_prof($ci){
         
-        // $p = file_get_contents('http://localhost:8001/persona/ci/'.$ci, true);
+        $p = file_get_contents('http://localhost:8001/persona/ci/'.$ci, true);
         
         if ($p) {
-            // $array = json_decode($p);
             return $p;
         }else{
             return "No existe";
         }
-        /*
-        $ficha_id = $array[0]->fic_id;
-        $cedula = $array[0]->fic_cedula;
-        $codigo_prof = $array[0]->prf_codigo;
-        $correo = $array[0]->fic_email;
-        $telefono = $array[0]->fic_tel;
-        $primer_nombre = $array[0]->fic_nom1;
-        $segundo_nombre = $array[0]->fic_nom2;
-        $primer_apellido = $array[0]->fic_ape1;
-        $segundo_apellido = $array[0]->fic_ape2;
-
-        $direccion = $array[0]->fic_dir;
-        $pais = $array[0]->fic_dirpais;
-        $estado = $array[0]->fic_direstado;
-        $fecha_nac = $array[0]->fic_fnac;
-
-        return "<h1>".$primer_nombre." ".$primer_apellido."</h1>";
-
-        */
     }
+
+    // public function search(){
+    //     return
+    // } 
 
     public function destroy($id)
     {

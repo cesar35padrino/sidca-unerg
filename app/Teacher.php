@@ -60,6 +60,16 @@ class Teacher extends Model
         return $this->hasMany(Phone::class);
     }
 
+    public function documents()
+    {
+        return $this->hasMany(Document::class);
+    }
+
+    public function titles()
+    {
+        return $this->hasMany(Title::class);
+    }
+
     public function studies()
     {
         return $this->hasMany(Study::class);
@@ -101,5 +111,15 @@ class Teacher extends Model
     public function crh()
     {
         return $this->belognsTo(Crh::class);
+    }
+
+    public function scopeSearch($query, $search){
+        if($search){
+            return $query->where('identity','LIKE',"%$search%")
+            ->orWhere('first_name','LIKE',"%$search%")
+            ->orWhere('last_name','LIKE',"%$search%")
+            ->orWhere('status','LIKE',"%$search%")
+            ->orWhere('observation','LIKE',"%$search%");
+        }
     }
 }

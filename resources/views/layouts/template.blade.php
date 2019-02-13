@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>SIDCA | Registro</title>
+	<title>SIDCA</title>
 	<link rel="icon" href="{{asset('img/Unerg-1.png')}}">
 	<!-- CSS FILES -->
 	<link rel="stylesheet" href="{{asset('css/uikit.min.css')}}" />
 	<link rel="stylesheet" href="{{asset('css/style.css')}}">
+	@yield('css')
+
 </head>
 <body class="uk-light wrap uk-background-norepeat uk-background-cover uk-background-center-center uk-background-secondary" style="background-image: url({{asset('img/P6265793.JPG')}})">
 	<div class="uk-offcanvas-content">
@@ -19,7 +21,7 @@
 					<nav class="uk-navbar-container uk-navbar-transparent" data-uk-navbar>
 						<div class="uk-navbar-left">
 							<div class="uk-navbar-item">
-								<a class="uk-logo" href="cover.html"><img src="{{asset('img/image.png')}}" alt="Logo"><span>SIDCA</span></a>
+								<a class="uk-logo" href="{{ url('/') }}"><img src="{{asset('img/image.png')}}" alt="Logo"><span>SIDCA</span></a>
 							</div>
 						</div>
 						@guest
@@ -27,11 +29,23 @@
 						@else
 						<div class="uk-navbar-right">
 							<ul class="uk-navbar-nav">
-								<li class="uk-active uk-visible@m"><a href="" data-uk-icon="home"></a></li>
-								<li class="uk-visible@s"><a href="/profesores/">PROFESOR</a></li>
-								<li class="uk-visible@s"><a href="#">NOMINA</a></li>
-								<li class="uk-visible@s"><a href="#">PRECARGAR DATOS</a></li>
-								<li><a class="uk-navbar-toggle" data-uk-toggle data-uk-navbar-toggle-icon uk-toggle="target: #offcanvas-slide"></a></li>
+								<li class="uk-active uk-visible@m">
+									<a href="" data-uk-icon="home"></a>
+								</li>
+								<li class="uk-visible@s">
+									<a href="/profesores/">PROFESOR</a>
+								</li>
+								<li class="uk-visible@s">
+									<a href="#">NOMINA</a></li>
+								<li class="uk-visible@s">
+									<a href="#">PRECARGAR DATOS</a>
+								</li>
+								<li class="uk-visible@s">
+									<a href="#">USUARIO</a>
+								</li>
+								<li>
+									<a class="uk-navbar-toggle" data-uk-toggle data-uk-navbar-toggle-icon uk-toggle="target: #offcanvas-slide"></a>
+								</li>
 							</ul>
 						</div>
 						@endguest
@@ -55,34 +69,52 @@
 			<div class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide">
 				<button class="uk-offcanvas-close uk-close uk-icon" type="button" data-uk-close></button>
 				<ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
+					@auth
+						<li style="background-color: #ff5; color: #000; font-family: arial;">Usuario: {{ \Auth::User()->user }} / Tipo: {{ \Auth::User()->role->rol }}</li>
+					@endauth
 					<li class="uk-active"><a href="#">Menu Principal</a></li>
 					<li class="uk-parent">
 						<a href="#" >PROFESOR</a>
 						<ul class="uk-nav-sub">
-							<li><a href="{{route('profesores.create')}}">Registrar Profesor</a></li>
-							<li><a href="{{route('profesores.index')}}">Listado de Profesores</a></li>
+							<li><a href="{{route('profesores.create')}}">Registrar</a></li>
+							<li><a href="{{route('profesores.index')}}">Listado</a></li>
+							{{-- <li><a href="{{ route('expedientes.index') }}">Expediente</a></li> --}}
+							<li><a href="#">Titulos obtenidos</a></li>
+							<li><a href="#">Cursos realizados</a></li>
+							<li><a href="#">Experiencia laboral</a></li>
+							<li><a href="#">Participacion en eventos</a></li>
+							<li><a href="#">Productos de investigacion</a></li>
+							<li><a href="#">Formacion de talentos</a></li>
+							<li><a href="#">Actividades</a></li>
 						</ul>
 					</li>
 					<li class="uk-parent">
 						<a href="#" >NOMINA</a>
 						<ul class="uk-nav-sub">
-							<li><a href="#">SubMenu 1</a></li>
-							<li><a href="#">SubMenu 2</a></li>
-							<ul class="uk-nav-sub">
-								<li><a href="">SubMenu 3</a></li>
-								<li><a href="">SubMenu 4</a></li>
-							</ul>
+							<li><a href="#">Crear</a></li>
+							<li><a href="#">Seguimiento</a></li>
+							<li><a href="#">Consulta</a></li>
+							<li><a href="#">Relacion</a></li>
+							<li><a href="#">Devolucion</a></li>
 						</ul>
 					</li>
 					<li class="uk-parent">
 						<a href="#" >PRECARGAR DATOS</a>
 						<ul class="uk-nav-sub">
-							<li><a href="#">SubMenu 1</a></li>
-							<li><a href="#">SubMenu 2</a></li>
-							<ul class="uk-nav-sub">
-								<li><a href="">SubMenu 3</a></li>
-								<li><a href="">SubMenu 4</a></li>
-							</ul>
+							{{-- <li><a href="#">Movimiento</a></li> --}}
+							<li><a href="{{ route('periodos.create') }}">Periodo</a></li>
+							<li><a href="{{ route('programas.create') }}">Programa</a></li>
+							<li><a href="{{ route('areas.create') }}">Area Academica</a></li>
+							<li><a href="{{ route('sedes.create') }}">Sede</a></li>
+							<li><a href="{{ route('nucleos.create') }}">Nucleo</a></li>
+							<li><a href="{{ route('unidad-curricular.create') }}">Unidad Curricular</a></li>
+						</ul>
+					</li>
+					<li class="uk-parent">
+						<a href="#" >USUARIO</a>
+						<ul class="uk-nav-sub">
+							<li><a href="{{ Route('usuarios.create') }}">Crear</a></li>
+							<li><a href="{{ Route('usuarios.index') }}">Todos</a></li>
 						</ul>
 					</li>
 					<li class="uk-nav-divider"></li>
@@ -94,8 +126,7 @@
 					</form>
 				</li>
 				</ul>
-				<h3>¿Porque Sidca?</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<p>Proporcionar a la institución en sus diferentes niveles e instancias, la información completa y fidedigna del personal docente – investigador unerg, de acuerdo al registro exhaustivo y confiable de su trayectoria, desde el inicio hasta el momento en que sea requerido.</p>
 			</div>
 		</div>
 		<!-- /OFFCANVAS -->
@@ -106,7 +137,6 @@
 	<script src="{{asset('js/myjs.js')}}"></script>
 	<script src="{{asset('js/uikit.min.js')}}"></script>
 	<script src="{{asset('js/uikit-icons.min.js')}}"></script>
-
 	@yield('js')
 </body>
 </html>
